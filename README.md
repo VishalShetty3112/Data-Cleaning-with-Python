@@ -15,25 +15,30 @@ The loan dataset consists of 13 columns including 'UID', 'Marital_status', 'Depe
 
  ![Screenshot (65)](https://github.com/user-attachments/assets/acbaf569-2d65-473c-a2e2-bf45bf1e6860)
 
-Duplicate rows are identified and removed from the dataset both based on the entire row.           Dropped Duplicate UID’s on the 'UID' column.
+Duplicate rows are identified and removed from the dataset both based on the entire row.Dropped Duplicate UID’s on the 'UID' column.
+
 
 ### Handling Incorrect Records
 Negative values in the 'Age' column are replaced with a Age>=0.
 Since 1 row has found with ‘Age’ of -12. We dropped the rows having Age<0.
 
-df =df[(df['Age'].isna()) | (df['Age']>=0)]
+#### df =df[(df['Age'].isna()) | (df['Age']>=0)]
+
 
 ### Converting Data Types
 The ‘Dependents’, ‘Income’ columns are converted to the float data type. Categorical data types are assigned to 'Marital_status' and 'Is_graduate' columns. Credit Column is converted to object data type.
 
+![Screenshot (66)](https://github.com/user-attachments/assets/6e26c386-6f57-451b-bb06-6d527dddc0f6)
+
+
 ### Data Standardization
 String values in the 'Marital_status' column are standardized by converting to Uppercase. In the 'Sex' column, 'M' and 'F' values are replaced with 'Male' and 'Female’ respectively.
 
-df.loc[:,'Marital_status'] = df['Marital_status'].str.upper()
-df['Marital_status'].value_counts()
+#### df.loc[:,'Marital_status'] = df['Marital_status'].str.upper()
+#### df['Marital_status'].value_counts()
 
-df.loc[:,'Sex'] =df['Sex'].replace({'M' : 'Male', 'F' : 'Female'})
-df['Sex'].value_counts()
+#### df.loc[:,'Sex'] =df['Sex'].replace({'M' : 'Male', 'F' : 'Female'})
+#### df['Sex'].value_counts()
 
 
 ### Handling Missing Values
